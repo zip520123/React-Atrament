@@ -4,7 +4,10 @@ import Sketcher from './Sketcher';
 import Controls from './Controls';
 
 class Layout extends Component {
-
+    componentDidMount(){
+        this.sketcher.smoothing = false
+        this.sketcher.adaptiveStroke = false
+    }
     handleClear() {
         this.sketcher.clear();
     }
@@ -15,6 +18,9 @@ class Layout extends Component {
 
     handleSmoothing(checked) {
         this.sketcher.smoothing = checked;
+    }
+    handleAdaptiveStroke(checked) {
+        this.sketcher.adaptiveStroke = checked;
     }
 
     handleMode(mode) {
@@ -47,6 +53,7 @@ class Layout extends Component {
                                 onChangeMode={this.handleMode.bind(this)}
                                 onChangeOpacity={this.handleOpacity.bind(this)} 
                                 onChangeColour={this.handleColorChange.bind(this)}
+                                onChangeAdaptiveStroke={this.handleAdaptiveStroke.bind(this)}
                                 />
                     </div>
                         

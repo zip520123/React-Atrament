@@ -16,7 +16,7 @@ class Controls extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {checked: true, thickness: 2, colour: '#000000', opacity: 1};
+        this.state = {smoothing: true, adaptiveStroke: false,  thickness: 2, colour: '#000000', opacity: 1};
     }
 
     handleClear() {
@@ -30,9 +30,12 @@ class Controls extends Component {
 
     handleSmoothing(e) {
         this.props.onToggleSmoothing(e.target.checked);
-        this.setState({checked: e.target.checked});
+        this.setState({smoothing: e.target.checked});
     }
-
+    handleAdapiveStroke(e){
+        this.props.onChangeAdaptiveStroke(e.target.checked);
+        this.setState({adaptiveStroke: e.target.checked});
+    }
     handleMode(e) {
         this.props.onChangeMode(e.target.value);
     }
@@ -51,7 +54,7 @@ class Controls extends Component {
         return (
             <form>
                 <div className="field">
-                    <button className="button is-primary" type="button" onClick={this.handleClear.bind(this)}>clear</button>
+                    <button className="clearButton" type="button" onClick={this.handleClear.bind(this)}>clear</button>
                 </div>
                 {/* <Control label="Thickness">
                     <input
@@ -67,9 +70,17 @@ class Controls extends Component {
                         className="checkbox"
                         type="checkbox"
                         onChange={this.handleSmoothing.bind(this)}
-                        checked={this.state.checked}
+                        checked={this.state.smoothing}
                         autoComplete="off" />
                 </Control> */}
+                <Control label="adaptiveStroke">
+                    <input
+                        className="checkbox"
+                        type="checkbox"
+                        onChange={this.handleAdapiveStroke.bind(this)}
+                        checked={this.state.adaptiveStroke}
+                        autoComplete="off" />
+                </Control>
                 {/* <Control label="Mode">
                     <div className="select">
                         <select onChange={this.handleMode.bind(this)}>
