@@ -16,7 +16,7 @@ class Controls extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {smoothing: true, adaptiveStroke: false,  thickness: 2, colour: '#000000', opacity: 1};
+        this.state = {smoothing: true, adaptiveStroke: false,  thickness: 2, colour: '#606060', opacity: 1};
     }
 
     handleClear() {
@@ -53,11 +53,12 @@ class Controls extends Component {
     render() {
         return (
             <form>
-                <div className="field">
-                    <button className="clearButton" type="button" onClick={this.handleClear.bind(this)}>clear</button>
-                </div>
+                {/* <div className="field">
+                    
+                </div> */}
+                <button className="clearButton" type="button" onClick={this.handleClear.bind(this)}>clear</button>
                 {/* <Control label="Thickness">
-                    <input
+                    <input style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}
                         type="range"
                         min="1" max="40"
                         onChange={this.handleThickness.bind(this)}
@@ -65,6 +66,20 @@ class Controls extends Component {
                         step="0.1"
                         autoComplete="off" />
                 </Control> */}
+                <label className="label" style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}>{this.state.thickness}</label>
+                <input style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}
+                        type="range"
+                        min="1" max="40"
+                        onChange={this.handleThickness.bind(this)}
+                        value={this.state.thickness}
+                        step="0.1"
+                        autoComplete="off" />
+                <label className="label" style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}>{this.state.colour}</label>
+                <input style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}
+                        type="color"
+                        onChange={this.onHandleColour.bind(this)}
+                        value={this.state.colour}
+                        autoComplete="off" />
                 {/* <Control label="Smoothing">
                     <input
                         className="checkbox"
@@ -73,14 +88,14 @@ class Controls extends Component {
                         checked={this.state.smoothing}
                         autoComplete="off" />
                 </Control> */}
-                <Control label="adaptiveStroke">
+                {/* <Control label="adaptiveStroke">
                     <input
                         className="checkbox"
                         type="checkbox"
                         onChange={this.handleAdapiveStroke.bind(this)}
                         checked={this.state.adaptiveStroke}
                         autoComplete="off" />
-                </Control>
+                </Control> */}
                 {/* <Control label="Mode">
                     <div className="select">
                         <select onChange={this.handleMode.bind(this)}>
@@ -90,13 +105,13 @@ class Controls extends Component {
                         </select>
                     </div>
                 </Control> */}
-                <Control label="Colour">
-                    <input
+                {/* <Control label="Colour" >
+                    <input style={{top : 10 , right: 10}}
                         type="color"
                         onChange={this.onHandleColour.bind(this)}
                         value={this.state.colour}
                         autoComplete="off" />
-                </Control>
+                </Control> */}
                 {/* <Control label="Opacity">
                     <input
                         type="range"
