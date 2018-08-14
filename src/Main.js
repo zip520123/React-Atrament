@@ -1,11 +1,10 @@
 import React,{Component} from 'react';
 import okButton from './images/okButton.png';
 import bg1 from './images/bg1.jpg';
-import bg5 from './images/bg5.png';
 // import bg3 from './images/bg3.jpg';
 import bg4 from './images/bg4.jpg';
-import Layout from './components/Layout';
-
+import Page2 from './Page2';
+// import bg6 from './images/bg6.PNG';
 class Main extends Component {
     componentDidMount(){
         
@@ -25,7 +24,9 @@ class Main extends Component {
     render(){
         if (this.props.page === "goToMain"){
             var bgStyle = {
-                backgroundImage: `url(${bg1})`
+                backgroundImage: `url(${bg1})`,
+                backgroundSize: "cover"
+                
               };
             var mainContent = <div className="bg" style={bgStyle}>
                 <button className="startButton">
@@ -37,29 +38,19 @@ class Main extends Component {
                     {mainContent}
                 </div>)
         }else if (this.props.page === "goToPage2"){
-            var page2 = <div className="bg" 
-            // style={{backgroundImage:`url(${bg5})` ,
-                // opacity: "0.2"
-            // }}
-            >
-            <Layout />
-            <button className="startButton">
-            <img className= "startButtonImage" style={{opacity: "1"}} src={okButton} alt="" onClick={this.page2ButtonClick} />
-            </button>
-            </div>
+            
             return (
                 <div className="c1">
-                    {page2}
+                    <Page2 onOkButtonClick={this.page2ButtonClick} />
                 </div>)
         }else if (this.props.page === "goToPage3"){
-            var page3 = <div className="bg" style={{
-                backgroundImage: `url(${bg4})`,
-                backgroundSize: "cover",
-                // opacity: "0.2"
-                // backgroundRepeat: "no-repeat",
-                // backgroundAttachment: "fixed",
-                // backgroundPosition: "center"
-            }}>
+            var page3 = <div className="bg" >
+            <div className="bg" style={{backgroundImage:`url(${bg4})` ,
+                opacity: "0.2",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center"
+            }}></div>
             <button className="startButton">
             <img className= "startButtonImage" style={{opacity: "1"}} src={okButton} alt="" onClick={this.page3ButtonClick} />
             </button>

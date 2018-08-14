@@ -6,6 +6,7 @@
     "atrament": "^0.2.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-modal": "^3.5.1",
     "react-scripts": "1.1.4",
     "throttle-debounce": "^2.0.1"
   },
@@ -15,7 +16,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://zip520123.github.io/React-Atrament",
   "devDependencies": {

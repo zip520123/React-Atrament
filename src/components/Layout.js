@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import Sketcher from './Sketcher';
-import Controls from './Controls';
+// import Controls from './Controls';
 
 class Layout extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
             thickness: "2",
-            colour : "#606060"
+            colour : "#1f2126"
         };
       }
     componentDidMount(){
@@ -63,9 +63,8 @@ class Layout extends Component {
                             </ Sketcher>
                         </div>
                         
-                        <div className="column is-one-quarter">
+                        {/* <div className="column is-one-quarter">
                             <Controls
-                                // thickness={this.state.thickness}
                                 {...this.state}
                                 onClear={this.handleClear.bind(this)}
                                 onChangeThickness={this.handleThickness.bind(this)}
@@ -75,7 +74,7 @@ class Layout extends Component {
                                 onChangeColour={this.handleColorChange.bind(this)}
                                 onChangeAdaptiveStroke={this.handleAdaptiveStroke.bind(this)}
                                 />
-                    </div>
+                    </div> */}
                         
                     </div>
                     

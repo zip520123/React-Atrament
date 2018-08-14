@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Control from './Control';
+// import Control from './Control';
 
 class Controls extends Component {
 
@@ -66,7 +66,8 @@ class Controls extends Component {
                         step="0.1"
                         autoComplete="off" />
                 </Control> */}
-                <label className="label" style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}>{this.state.thickness}</label>
+                
+                {/* <label className="label" style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}>{this.state.thickness}</label>
                 <input style={{ marginLeft:"10%",marginRight:"10%", width:"70%"}}
                         type="range"
                         min="1" max="40"
@@ -79,7 +80,7 @@ class Controls extends Component {
                         type="color"
                         onChange={this.onHandleColour.bind(this)}
                         value={this.state.colour}
-                        autoComplete="off" />
+                        autoComplete="off" /> */}
                 {/* <Control label="Smoothing">
                     <input
                         className="checkbox"
